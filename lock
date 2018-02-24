@@ -42,17 +42,17 @@ SCRIPTPATH=$(realpath "$0")
 SCRIPTPATH=${SCRIPTPATH%/*}
 
 # l10n support
-TEXT="Type password to unlock"
-case "$LANG" in
-    de_* ) TEXT="Bitte Passwort eingeben" ;; # Deutsch
-    en_* ) TEXT="Type password to unlock" ;; # English
-    es_* ) TEXT="Ingrese su contraseña" ;; # Española
-    fr_* ) TEXT="Entrez votre mot de passe" ;; # Français
-    pl_* ) TEXT="Podaj hasło" ;; # Polish
-esac
+TEXT=""
+#case "$LANG" in
+    #de_* ) TEXT="Bitte Passwort eingeben" ;; # Deutsch
+    #en_* ) TEXT="Type password to unlock" ;; # English
+    #es_* ) TEXT="Ingrese su contraseña" ;; # Española
+    #fr_* ) TEXT="Entrez votre mot de passe" ;; # Français
+    #pl_* ) TEXT="Podaj hasło" ;; # Polish
+#esac
 
 scrot -z "$IMAGE"
-ICON="$SCRIPTPATH/lock.png"
+ICON="$SCRIPTPATH/idexo.png"
 PARAM=(--textcolor=ffffff00 --insidecolor=ffffff1c --ringcolor=ffffff3e \
        --linecolor=ffffff00 --keyhlcolor=00000080 --ringvercolor=00000000 \
        --separatorcolor=22222260 --insidevercolor=0000001c \
@@ -66,8 +66,8 @@ do
         H=${BASH_REMATCH[2]}
         Xoff=${BASH_REMATCH[3]}
         Yoff=${BASH_REMATCH[4]}
-        MIDXi=$(($W / 2 + $Xoff - 60  / 2))
-        MIDYi=$(($H / 2 + $Yoff - 60  / 2))
+        MIDXi=$(($W / 2 + $Xoff - 361  / 2))
+        MIDYi=$(($H / 2 + $Yoff - 392  / 2))
         MIDXt=$(($W / 2 + $Xoff - 285 / 2))
         MIDYt=$(($H / 2 + $Yoff + 320 / 2))
         LOCK+=(-font $FONT -pointsize 26 -fill lightgrey -stroke grey10 \
